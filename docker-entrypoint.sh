@@ -81,7 +81,7 @@ if [ "$1" = "daapd" ]; then
       /usr/bin/logger  "dbus-daemon is not running on hosting server..."
       sleep 1s
     done
-    /usr/sbin/forked-daapd
+    /usr/sbin/forked-daapd -f
 fi
 
 exec "$@"
