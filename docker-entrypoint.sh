@@ -77,10 +77,14 @@ AutoUpgrade
 ConfigureUser
 
 if [ "$1" = "daapd" ]; then
+    rm -rf /var/run/dbus
+    mkdir -p /var/run/dbus
+    exec dbus-daemon --system --nofork &
     until [ -e /var/run/dbus/system_bus_socket ]; do
       /usr/bin/logger  "dbus-daemon is not running on hosting server..."
       sleep 1s
     done
+    exec avahi-daemon --no-chroot &
     /usr/sbin/forked-daapd -f
 fi
 
