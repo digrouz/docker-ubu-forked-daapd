@@ -13,7 +13,7 @@ http://ejurgensen.github.io/forked-daapd
       -v <path to music Library>:/srv/music \
       -e DOCKUID=<UID default:10013> \
       -e DOCKGID=<GID default:10013> \
-      -p 3689:3689  digrouz/docker-ubu-forkeddaapd
+      -p 3689:3689  digrouz/docker-ubu-forkeddaapd daapd
 
 
 ## Environment Variables
