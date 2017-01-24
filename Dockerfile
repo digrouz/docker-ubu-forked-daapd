@@ -4,14 +4,13 @@ MAINTAINER DI GREGORIO Nicolas "nicolas.digregorio@gmail.com"
 
 ### Environment variables
 ENV DEBIAN_FRONTEND='noninteractive' \
-    HOME='/config' \
     GOSU_VERSION='1.10'
 
 
 ### Install Applications DEBIAN_FRONTEND=noninteractive  --no-install-recommends
 RUN apt-get update && \
     apt-get -y --no-install-recommends dist-upgrade && \
-    apt-get install -y --no-install-recommends forked-daapd wget && \
+    apt-get install -y --no-install-recommends ca-certificates forked-daapd wget && \
     wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture)"  && \
     wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture).asc" && \
     export GNUPGHOME="$(mktemp -d)" && \
