@@ -1,8 +1,8 @@
 #!/bin/sh
 
 MYUSER="daapd"
-MYGID="10011"
-MYUID="10011"
+MYGID="10013"
+MYUID="10013"
 
 AutoUpgrade(){
   if [ -e /etc/alpine-release ]; then
