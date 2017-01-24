@@ -28,7 +28,7 @@ RUN apt-get update && \
     rm -rf /var/tmp/*
 
 ### Volume
-VOLUME ["/srv/music", "/var/run/dbus"]
+VOLUME ["/srv/music"]
 
 ### Expose ports
 EXPOSE 3689
