@@ -10,7 +10,7 @@ ENV DEBIAN_FRONTEND='noninteractive' \
 ### Install Applications DEBIAN_FRONTEND=noninteractive  --no-install-recommends
 RUN apt-get update && \
     apt-get -y --no-install-recommends dist-upgrade && \
-    apt-get install -y --no-install-recommends ca-certificates forked-daapd wget && \
+    apt-get install -y --no-install-recommends ca-certificates wget avahi-daemon dbus libnss-mdns forked-daapd && \
     wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture)"  && \
     wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture).asc" && \
     export GNUPGHOME="$(mktemp -d)" && \
